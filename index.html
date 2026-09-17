@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operation: Heart — Login</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+  <canvas id="particles"></canvas>
+
+  <div class="auth-container">
+    <div class="auth-card">
+
+      <div class="auth-logo">
+        <div class="logo-wrapper">
+          <div class="logo-heart">
+            <span class="logo-cursor">_</span>
+          </div>
+          <div class="logo-rings"></div>
+        </div>
+        <div class="logo-text">
+          <span class="logo-op">OPERATION</span>
+          <span class="logo-colon">:</span>
+          <span class="logo-heart-word">HEART</span>
+        </div>
+        <p class="auth-sub">◇ SECURE LOVE PROTOCOL v2.7 ◇</p>
+      </div>
+
+      <form id="auth-form" class="auth-form">
+
+        <div class="field">
+          <label>🆔 نام کاربری </label>
+          <input type="text" id="username" placeholder="مثلاً: Nika" required>
+        </div>
+
+        <div class="field">
+          <label>🎭 اسم کد (Codename)</label>
+          <input type="text" id="codename" placeholder="مثلاً: ShadowFox" required>
+        </div>
+
+        <div class="field">
+          <label>💻 سطح هکر</label>
+          <select id="level">
+            <option value="novice">Novice — تازه‌کار</option>
+            <option value="hacker" selected>Hacker — حرفه‌ای</option>
+            <option value="elite">Elite — افسانه‌ای</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>🎨 انتخاب شخصیت</label>
+          <div class="char-select" id="char-select"></div>
+        </div>
+
+        <div class="field">
+          <label>👕 انتخاب لباس</label>
+          <div class="outfit-select" id="outfit-select"></div>
+        </div>
+
+        <button type="submit" class="auth-btn">
+          <span>▶ INITIALIZE MISSION</span>
+        </button>
+
+        <p class="auth-footer">🔒 Connection secured with AES-256</p>
+      </form>
+
+    </div>
+  </div>
+
+  <script src="characters.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

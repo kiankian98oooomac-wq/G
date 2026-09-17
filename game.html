@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Operation: Heart — Mission</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="story.css">
+</head>
+<body>
+
+  <!-- صحنه داستان -->
+  <div id="story-scene" class="story-scene">
+    <canvas id="story-canvas"></canvas>
+    <div class="scene-bg" id="scene-bg" data-bg="matrix"></div>
+
+    <div class="character-stage">
+      <div class="char-sprite">
+        <div class="char-emoji" id="char-emoji">🧑‍💻</div>
+        <div class="char-glow" id="char-glow"></div>
+      </div>
+    </div>
+
+    <div class="dialogue-box" id="dialogue-box">
+      <div class="speaker" id="speaker"></div>
+      <div class="dialogue-text" id="dialogue-text"></div>
+      <div class="skip-hint">[ بزن روی صفحه ] برای ادامه</div>
+    </div>
+  </div>
+
+  <!-- ترمینال بازی -->
+  <div id="terminal" class="hidden">
+    <div id="output"></div>
+    <div id="input-line">
+      <span id="prompt">agent@shadow-net:~$</span>
+      <input type="text" id="command" autocomplete="off">
+    </div>
+  </div>
+
+  <!-- دکمه‌های لمسی برای موبایل -->
+  <div id="mobile-controls">
+    <button type="button" class="mobile-btn" data-cmd="scan">SCAN</button>
+    <button type="button" class="mobile-btn" data-cmd="list">LIST</button>
+    <button type="button" class="mobile-btn" data-cmd="status">STATUS</button>
+    <button type="button" class="mobile-btn" data-cmd="help">HELP</button>
+    <button type="button" class="mobile-btn" data-cmd="clear">CLR</button>
+  </div>
+
+  <div id="glitch-overlay"></div>
+
+  <script src="data.js"></script>
+  <script src="characters.js"></script>
+  <script src="story.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
