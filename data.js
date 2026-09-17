@@ -1,5 +1,5 @@
 // ==========================================
-//  🎮 داده‌های بازی — اینجا رو شخصی‌سازی کن
+//  🎮 داده‌های بازی — ۷ زبان برنامه‌نویسی
 // ==========================================
 
 const GAME_DATA = {
@@ -7,34 +7,129 @@ const GAME_DATA = {
   targetName: "عشق من",       // ← اسم دوست دخترت
   agentName: "Agent",          // ← لقب خودت
 
-  // ============ ۷ مرحله (۷ زبان) ============
+  // ============ ۷ مرحله (۷ زبان برنامه‌نویسی) ============
   nodes: [
     {
       id: "node_1",
-      lang: "English",
-      title: "Node 1 — First Contact",
-      story: "یه فایل رمزگذاری‌شده پیدا کردی. باید کلیدش رو پیدا کنی.",
-      puzzle: "Complete the sentence:\n\n  'You are my ______' \n\n(4 letters, shines at night)",
-      answer: ["star", "ستاره"],
-      hint: "به آسمون شب نگاه کن... همون چیزی که توی چشماش می‌درخشه.",
-      reward: "اولین حرف جواب = یه تیکه از کلید."
+      lang: "Python",
+      title: "Node 1 — Python Protocol",
+      story: "یه اسکریپت پایتون قفل شده. باید خروجی رو پیش‌بینی کنی.",
+      puzzle: "این کد پایتون چی چاپ می‌کنه؟\n\n  print('love' * 2)",
+      answer: ["lovelove", "love love", "lovelove"],
+      hint: "تو پایتون، رشته ضربدر عدد = تکرار. 'a'*3 میشه 'aaa'.",
+      reward: "اولین حرف جواب = یه تیکه از کلید نهایی."
     },
     {
       id: "node_2",
-      lang: "Français",
-      title: "Node 2 — French Firewall",
-      story: "یه فایروال فرانسوی جلوی راهته. باید رمزش رو بشکنی.",
-      puzzle: "Decode this Caesar cipher (shift = 3):\n\n  'prx frx'",
-      answer: ["mon coeur", "moncoeur", "قلب من"],
-      hint: "هر حرف رو ۳ تا به عقب ببر. p→m, r→o, x→u ...",
-      reward: "حرف اول جواب."
+      lang: "JavaScript",
+      title: "Node 2 — JavaScript Firewall",
+      story: "یه فایروال جاوااسکریپتی. باید بفهمی چی برمی‌گردونه.",
+      puzzle: "خروجی این کد چیه؟\n\n  typeof NaN",
+      answer: ["number", "number", "شماره"],
+      hint: "تو JS، NaN از نوع... خب خودت می‌دونی دیگه! 😉",
+      reward: "اولین حرف جواب."
     },
     {
       id: "node_3",
-      lang: "Deutsch",
-      title: "Node 3 — German Vault",
-      story: "یه گاوصندوق آلمانی. کد ۴ رقمی می‌خواد.",
-      puzzle: "Wie sagt man 'Liebe' auf Englisch? (4 Buchstaben)",
+      lang: "C",
+      title: "Node 3 — C Vault",
+      story: "یه گاوصندوق C. کدش یه چیز ساده‌ست ولی مهم.",
+      puzzle: "تو C، این خط چه مقداری برمی‌گردونه؟\n\n  sizeof(int)",
+      answer: ["4", "چهار"],
+      hint: "روی ۹۹٪ سیستم‌ها این عدد بین ۲ و ۸ ولی معمولاً... ۴.",
+      reward: "اولین حرف جواب."
+    },
+    {
+      id: "node_4",
+      lang: "Java",
+      title: "Node 4 — Java Lock",
+      story: "قفل جاوا. باید بدونی String immutable هست یا نه.",
+      puzzle: "تو جاوا، String چیه؟\n\n  (mutable / immutable)",
+      answer: ["immutable", "غیرقابل تغییر", "immutable"],
+      hint: "هر بار که String تغییر می‌دی، یه آبجکت جدید ساخته می‌شه.",
+      reward: "اولین حرف جواب."
+    },
+    {
+      id: "node_5",
+      lang: "Rust",
+      title: "Node 5 — Rust Protocol",
+      story: "یه پروتکل Rust. سیستم ownership چطور کار می‌کنه؟",
+      puzzle: "تو Rust، هر مقدار چند تا owner می‌تونه داشته باشه؟",
+      answer: ["1", "one", "یک"],
+      hint: "این پایه‌ی borrow checker هست. فقط یکی!",
+      reward: "اولین حرف جواب."
+    },
+    {
+      id: "node_6",
+      lang: "Go",
+      title: "Node 6 — Go Cipher",
+      story: "یه رمز Go. goroutine ها چطور کار می‌کنن؟",
+      puzzle: "تو Go، برای شروع یه goroutine از چه کلمه‌ای استفاده می‌شه؟",
+      answer: ["go", "گو"],
+      hint: "همون اسم زبونه! 😄",
+      reward: "اولین حرف جواب."
+    },
+    {
+      id: "node_7",
+      lang: "SQL",
+      title: "Node 7 — SQL Gate",
+      story: "آخرین دروازه. یه کوئری SQL می‌خواد.",
+      puzzle: "تو SQL، برای گرفتن همه‌ی ستون‌ها از یه جدول چی می‌نویسی؟",
+      answer: ["select *", "select*", "*", "select * from"],
+      hint: "علامت ستاره — همه چیز رو می‌گیره.",
+      reward: "اولین حرف جواب — آخرین تیکه‌ی پازل."
+    }
+  ],
+
+  // ============ پیام نهایی ============
+  finalMessage:
+`عشق من،
+
+اگه این پیام رو می‌خونی، یعنی تونستی ۷ تا قفل کد رو بشکنی.
+درست مثل کاری که با قلب من کردی — از روز اول.
+
+هفت زبان، هفت قفل، هفت رمز...
+ولی هیچ‌کدوم به اندازه‌ی یه نگاهت پیچیده نبود.
+
+هر خط کد که نوشتم، هر تابع که صدا زدم،
+یه بار دیگه بهت فکر کردم.
+
+تو زیباترین باگ زندگی منی —
+همونی که هیچ‌وقت نمی‌خوام fixش کنم.
+
+دوستت دارم. ❤️`,
+
+  // ============ متن بوت ============
+  bootLines: [
+    "> Initializing kernel...",
+    "> Loading encrypted modules...",
+    "> Establishing secure connection...",
+    "> Bypassing firewall...",
+    "> Injecting payload...",
+    "> Access level: UNKNOWN",
+    "> ...",
+    "> ...",
+    "> Welcome, Agent.",
+    "> Target locked: Operation Heart",
+    "> Type 'help' to begin."
+  ]
+};
+
+// ============ لوگوی ASCII ============
+const ASCII_LOGO = `
+   ██████╗ ██████╗ ███████╗██████╗  █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+  ██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+  ██║   ██║██████╔╝█████╗  ██████╔╝███████║   ██║   ██║██║   ██║██╔██╗ ██║
+  ██║   ██║██╔═══╝ ██╔══╝  ██╔══██╗██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
+  ╚██████╔╝██║     ███████╗██║  ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
+   ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+                          ██╗  ██╗███████╗ █████╗ ██████╗ ████████╗
+                          ██║  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝
+                          ███████║█████╗  ███████║██████╔╝   ██║
+                          ██╔══██║██╔══╝  ██╔══██║██╔══██╗   ██║
+                          ██║  ██║███████╗██║  ██║██║  ██║   ██║
+                          ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
+`;      puzzle: "Wie sagt man 'Liebe' auf Englisch? (4 Buchstaben)",
       answer: ["love", "liebe"],
       hint: "عشق به انگلیسی، ۴ حرف.",
       reward: "حرف اول جواب."
