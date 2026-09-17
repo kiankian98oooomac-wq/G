@@ -1,178 +1,83 @@
 // ==========================================
-//  🎮 داده‌های بازی — ۷ زبان برنامه‌نویسی
+//  🎮 داده‌های بازی — ۷ زبان زنده‌ی دنیا
 // ==========================================
 
 const GAME_DATA = {
 
-  targetName: "عشق من",       // ← اسم دوست دخترت
-  agentName: "Agent",          // ← لقب خودت
+  targetName: "عشق من",
+  agentName: "Agent",
 
-  // ============ ۷ مرحله (۷ زبان برنامه‌نویسی) ============
+  // ============ ۷ مرحله (۷ زبان) ============
   nodes: [
     {
       id: "node_1",
-      lang: "Python",
-      title: "Node 1 — Python Protocol",
-      story: "یه اسکریپت پایتون قفل شده. باید خروجی رو پیش‌بینی کنی.",
-      puzzle: "این کد پایتون چی چاپ می‌کنه؟\n\n  print('love' * 2)",
-      answer: ["lovelove", "love love", "lovelove"],
-      hint: "تو پایتون، رشته ضربدر عدد = تکرار. 'a'*3 میشه 'aaa'.",
-      reward: "اولین حرف جواب = یه تیکه از کلید نهایی."
+      lang: "English",
+      title: "Node 1 — English Protocol",
+      story: "A secret file is encrypted. Find the key word.",
+      puzzle: "Complete the sentence:\n\n  'You are my ______'\n\n(4 letters, shines at night)",
+      answer: ["star", "ستاره"],
+      hint: "Look at the night sky — the thing that shines in her eyes.",
+      reward: "First letter of the answer."
     },
     {
       id: "node_2",
-      lang: "JavaScript",
-      title: "Node 2 — JavaScript Firewall",
-      story: "یه فایروال جاوااسکریپتی. باید بفهمی چی برمی‌گردونه.",
-      puzzle: "خروجی این کد چیه؟\n\n  typeof NaN",
-      answer: ["number", "number", "شماره"],
-      hint: "تو JS، NaN از نوع... خب خودت می‌دونی دیگه! 😉",
-      reward: "اولین حرف جواب."
+      lang: "Français",
+      title: "Node 2 — Pare-feu Français",
+      story: "Un fichier français est verrouillé. Trouve le mot-clé.",
+      puzzle: "Décode ce message (César, décalage = 3):\n\n  'prx frx'\n\n(2 mots)",
+      answer: ["mon coeur", "moncoeur", "قلب من"],
+      hint: "Décale chaque lettre de 3 en arrière. p→m, r→o, x→u ...",
+      reward: "Première lettre de la réponse."
     },
     {
       id: "node_3",
-      lang: "C",
-      title: "Node 3 — C Vault",
-      story: "یه گاوصندوق C. کدش یه چیز ساده‌ست ولی مهم.",
-      puzzle: "تو C، این خط چه مقداری برمی‌گردونه؟\n\n  sizeof(int)",
-      answer: ["4", "چهار"],
-      hint: "روی ۹۹٪ سیستم‌ها این عدد بین ۲ و ۸ ولی معمولاً... ۴.",
-      reward: "اولین حرف جواب."
-    },
-    {
-      id: "node_4",
-      lang: "Java",
-      title: "Node 4 — Java Lock",
-      story: "قفل جاوا. باید بدونی String immutable هست یا نه.",
-      puzzle: "تو جاوا، String چیه؟\n\n  (mutable / immutable)",
-      answer: ["immutable", "غیرقابل تغییر", "immutable"],
-      hint: "هر بار که String تغییر می‌دی، یه آبجکت جدید ساخته می‌شه.",
-      reward: "اولین حرف جواب."
-    },
-    {
-      id: "node_5",
-      lang: "Rust",
-      title: "Node 5 — Rust Protocol",
-      story: "یه پروتکل Rust. سیستم ownership چطور کار می‌کنه؟",
-      puzzle: "تو Rust، هر مقدار چند تا owner می‌تونه داشته باشه؟",
-      answer: ["1", "one", "یک"],
-      hint: "این پایه‌ی borrow checker هست. فقط یکی!",
-      reward: "اولین حرف جواب."
-    },
-    {
-      id: "node_6",
-      lang: "Go",
-      title: "Node 6 — Go Cipher",
-      story: "یه رمز Go. goroutine ها چطور کار می‌کنن؟",
-      puzzle: "تو Go، برای شروع یه goroutine از چه کلمه‌ای استفاده می‌شه؟",
-      answer: ["go", "گو"],
-      hint: "همون اسم زبونه! 😄",
-      reward: "اولین حرف جواب."
-    },
-    {
-      id: "node_7",
-      lang: "SQL",
-      title: "Node 7 — SQL Gate",
-      story: "آخرین دروازه. یه کوئری SQL می‌خواد.",
-      puzzle: "تو SQL، برای گرفتن همه‌ی ستون‌ها از یه جدول چی می‌نویسی؟",
-      answer: ["select *", "select*", "*", "select * from"],
-      hint: "علامت ستاره — همه چیز رو می‌گیره.",
-      reward: "اولین حرف جواب — آخرین تیکه‌ی پازل."
-    }
-  ],
-
-  // ============ پیام نهایی ============
-  finalMessage:
-`عشق من،
-
-اگه این پیام رو می‌خونی، یعنی تونستی ۷ تا قفل کد رو بشکنی.
-درست مثل کاری که با قلب من کردی — از روز اول.
-
-هفت زبان، هفت قفل، هفت رمز...
-ولی هیچ‌کدوم به اندازه‌ی یه نگاهت پیچیده نبود.
-
-هر خط کد که نوشتم، هر تابع که صدا زدم،
-یه بار دیگه بهت فکر کردم.
-
-تو زیباترین باگ زندگی منی —
-همونی که هیچ‌وقت نمی‌خوام fixش کنم.
-
-دوستت دارم. ❤️`,
-
-  // ============ متن بوت ============
-  bootLines: [
-    "> Initializing kernel...",
-    "> Loading encrypted modules...",
-    "> Establishing secure connection...",
-    "> Bypassing firewall...",
-    "> Injecting payload...",
-    "> Access level: UNKNOWN",
-    "> ...",
-    "> ...",
-    "> Welcome, Agent.",
-    "> Target locked: Operation Heart",
-    "> Type 'help' to begin."
-  ]
-};
-
-// ============ لوگوی ASCII ============
-const ASCII_LOGO = `
-   ██████╗ ██████╗ ███████╗██████╗  █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
-  ██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
-  ██║   ██║██████╔╝█████╗  ██████╔╝███████║   ██║   ██║██║   ██║██╔██╗ ██║
-  ██║   ██║██╔═══╝ ██╔══╝  ██╔══██╗██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
-  ╚██████╔╝██║     ███████╗██║  ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
-   ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-                          ██╗  ██╗███████╗ █████╗ ██████╗ ████████╗
-                          ██║  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝
-                          ███████║█████╗  ███████║██████╔╝   ██║
-                          ██╔══██║██╔══╝  ██╔══██║██╔══██╗   ██║
-                          ██║  ██║███████╗██║  ██║██║  ██║   ██║
-                          ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
-`;      puzzle: "Wie sagt man 'Liebe' auf Englisch? (4 Buchstaben)",
-      answer: ["love", "liebe"],
-      hint: "عشق به انگلیسی، ۴ حرف.",
-      reward: "حرف اول جواب."
+      lang: "Deutsch",
+      title: "Node 3 — Deutscher Tresor",
+      story: "Ein deutscher Tresor. Ein Wort genügt.",
+      puzzle: "Was bedeutet 'Liebe' auf Englisch?\n\n(4 Buchstaben)",
+      answer: ["love", "liebe", "عشق"],
+      hint: "Das Gefühl, das du für sie hast.",
+      reward: "Erster Buchstabe der Antwort."
     },
     {
       id: "node_4",
       lang: "Español",
-      title: "Node 4 — Spanish Lock",
-      story: "قفلی اسپانیایی با یه معما.",
+      title: "Node 4 — Candado Español",
+      story: "Un candado español. Una frase corta.",
       puzzle: "¿Qué significa 'te quiero' en persa?",
       answer: ["دوستت دارم", "دوستدارم", "i love you", "عاشقتم"],
-      hint: "سه کلمه‌ی ساده که هر روز بهش می‌گی.",
-      reward: "حرف اول جواب."
+      hint: "Tres palabras simples que le dices cada día.",
+      reward: "Primera letra de la respuesta."
     },
     {
       id: "node_5",
       lang: "Italiano",
-      title: "Node 5 — Italian Protocol",
-      story: "یه پروتکل ایتالیایی با کد عددی.",
-      puzzle: "In Italiano, 'amore' significa...?",
-      answer: ["love", "عشق", "amore"],
-      hint: "همون کلمه‌ای که توی اسم ایتالیایی‌ها زیاد می‌بینی.",
-      reward: "حرف اول جواب."
+      title: "Node 5 — Protocollo Italiano",
+      story: "Un protocollo italiano. Una parola dolce.",
+      puzzle: "In italiano, 'amore' significa...?",
+      answer: ["love", "amore", "عشق"],
+      hint: "La parola più bella del mondo.",
+      reward: "Prima lettera della risposta."
     },
     {
       id: "node_6",
       lang: "日本語",
-      title: "Node 6 — Japanese Cipher",
-      story: "یه رمز ژاپنی. باید با رومیزی حلش کنی.",
-      puzzle: "What does '愛' (ai) mean in English?",
-      answer: ["love", "عشق", "ai"],
-      hint: "همون ۴ حرف همیشگی.",
-      reward: "حرف اول جواب."
+      title: "Node 6 — 日本語プロトコル",
+      story: "日本語のファイル。漢字を読め。",
+      puzzle: "「愛」は英語で何と言いますか？\n\n(4 letters)",
+      answer: ["love", "ai", "愛", "عشق"],
+      hint: "世界で一番美しい言葉。",
+      reward: "答えの最初の文字。"
     },
     {
       id: "node_7",
       lang: "العربية",
-      title: "Node 7 — Arabic Gate",
-      story: "آخرین دروازه. یه کلمه عربی می‌خواد.",
-      puzzle: "In Arabic, 'حبيبي' means...?",
-      answer: ["my love", "عشقم", "mybeloved", "my love"],
-      hint: "چیزی که تو رو صدا می‌زنه.",
-      reward: "اولین حرف — این آخرین تیکه‌ی پازله."
+      title: "Node 7 — البوابة العربية",
+      story: "ملف عربي مقفل. ابحث عن الكلمة.",
+      puzzle: "ماذا تعني كلمة 'حبيبي' بالإنجليزية؟\n\n(كلمتان)",
+      answer: ["my love", "عشقم", "my beloved"],
+      hint: "الكلمة التي تناديها كل يوم.",
+      reward: "أول حرف من الجواب."
     }
   ],
 
@@ -180,7 +85,7 @@ const ASCII_LOGO = `
   finalMessage:
 `عشق من،
 
-اگه این پیام رو می‌خونی، یعنی تونستی همه قفل‌ها رو بشکنی.
+اگه این پیام رو می‌خونی، یعنی تونستی ۷ تا قفل رو با ۷ زبان دنیا بشکنی.
 درست مثل کاری که با قلب من کردی — از روز اول.
 
 هفت زبان، هفت قفل، هفت رمز...
@@ -218,10 +123,4 @@ const ASCII_LOGO = `
   ██║   ██║██╔═══╝ ██╔══╝  ██╔══██╗██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
   ╚██████╔╝██║     ███████╗██║  ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
    ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-                          ██╗  ██╗███████╗ █████╗ ██████╗ ████████╗
-                          ██║  ██║██╔════╝██╔══██╗██╔══██╗╚══██╔══╝
-                          ███████║█████╗  ███████║██████╔╝   ██║
-                          ██╔══██║██╔══╝  ██╔══██║██╔══██╗   ██║
-                          ██║  ██║███████╗██║  ██║██║  ██║   ██║
-                          ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝
 `;
